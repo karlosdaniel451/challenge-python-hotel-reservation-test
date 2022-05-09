@@ -15,6 +15,12 @@ or
 $ pip3 install -r requirements.txt
 ```
 
+To run the `get_cheapest_hotel` function and check the results for some date samples:
+
+```
+$ python -m src.mymodule
+```
+
 
 To run the (failing) test:
 
