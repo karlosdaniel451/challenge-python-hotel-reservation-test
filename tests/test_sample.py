@@ -15,3 +15,48 @@ class MyTest(TestCase):
     def test3(self):
         result = "Ridgewood"
         self.assertEqual(result, get_cheapest_hotel("Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)"))
+
+    def test4(self):
+        """
+        In this test case, the total price for each hotel is:\n
+        R$200 for Lakewood\n
+        R$220 for Bridgewood\n
+        R$370 for Ridgewood\n
+        Thus, the cheapest hotel should be Ridgewood.
+        """
+        date_sequence = 'Regular: 08May2022(sun), 09May2022(mon)'
+
+        expected_result = 'Lakewood'
+        actual_result = get_cheapest_hotel(date_sequence)
+
+        self.assertEqual(expected_result, actual_result)
+
+    def test5(self):
+        """
+        In this test case, the total price for each hotel is:\n
+        R$180 for Lakewood\n
+        R$120 for Bridgwood\n
+        R$300 for Ridgewood\n
+        Thus, the cheapest hotel should be Bridgwood.
+        """
+        date_sequence = 'Regular: 07May2022(sat), 08May2022(sun)'
+
+        expected_result = 'Bridgewood'
+        actual_result = get_cheapest_hotel(date_sequence)
+
+        self.assertEqual(expected_result, actual_result)
+
+    def test6(self):
+        """
+        In this test case, the total price for each hotel is:\n
+        R$160 for Lakewood\n
+        R$160 for Bridgewood\n
+        R$140 for Ridgewood\n
+        Thus, the cheapest hotel should be Ridgewood.
+        """
+        date_sequence = 'Rewards: 08May2022(sun), 09May2022(mon)'
+
+        expected_result = 'Ridgewood'
+        actual_result = get_cheapest_hotel(date_sequence)
+
+        self.assertEqual(expected_result, actual_result)
